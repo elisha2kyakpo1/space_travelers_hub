@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
 import { getMissionsApi } from '../../redux/missions/actions/missionsAction';
 
 export const missions = () => {
@@ -11,9 +12,10 @@ export const missions = () => {
     console.log(missionsLists);
   }, []);
   return (
+
     <div className="missions">
       {missionsLists.map((item) => (
-        <div className="list-items">
+        <div key={uuidv4()} className="list-items">
           <div className="miss-name">{item.mission_name}</div>
           <div className="miss-desc">{item.description}</div>
           <div className="status" />
@@ -24,3 +26,5 @@ export const missions = () => {
     </div>
   );
 };
+
+export default missions;
