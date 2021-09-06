@@ -10,8 +10,16 @@ export const missions=()=>{
         console.log(missionsLists)
     }, [])
     return(
-        {
+        <div class="missions">
+            {missionsLists.map((item)=>(
+                <div className="list-items">
+                    <div className="miss-name">{item.mission_name}</div>
+                    <div className="miss-desc">{item.description}</div>
+                    <div className="status"></div>
+                </div>
 
-        }
+            ))}
+
+        </div>
     )
 }
