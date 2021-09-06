@@ -1,10 +1,10 @@
 import './App.css';
-import { missions } from './components/missions/missions';
+import { Missions } from './components/missions/missions';
 
 function App() {
   return (
     <div className="App">
-      <missions />
+      <Missions />
     </div>
   );
 }
