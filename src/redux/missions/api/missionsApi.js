@@ -1,4 +1,4 @@
-export const getMissions = async () => {
+const getMissions = async () => {
   const response = await fetch('', {
     method: 'GET',
     headers: {
@@ -9,3 +9,5 @@ export const getMissions = async () => {
 
   return response;
 };
+
+export default getMissions;
