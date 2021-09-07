@@ -3,6 +3,10 @@
   list-style: none;
 }
 
+.nav-link.active {
+  text-decoration: underline;
+}
+
 .header nav {
   margin-left: auto;
 }
@@ -32,8 +36,4 @@
 .nav-links-cont {
   display: flex;
   align-items: center;
-}
-
-.active {
-  text-decoration: underline;
 }

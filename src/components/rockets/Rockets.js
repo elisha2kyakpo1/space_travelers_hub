@@ -4,6 +4,7 @@ import {
   Button,
   Card,
 } from 'react-bootstrap';
+import './rockets.css';
 import { getRocketData } from '../../redux/rockets/Rockets';
 
 const Rockets = () => {
@@ -16,28 +17,29 @@ const Rockets = () => {
   }, []);
 
   return (
-    <Card style={{ margin: '0 28px' }}>
-      <div>
+    <section>
+      <div className="cont-rockets">
         {rockets.map((rocket) => (
           <div key={rocket.id}>
-            <Card style={{ boxShadow: 'none' }}>
+            <div className="img-desc">
               <div>
-                image=
-                {rocket.flickrImages[0]}
-                title=
-                {rocket.name}
+                <Card>
+                  image=
+                  {rocket.flickrImages[0]}
+                  title=
+                  {rocket.name}
+                </Card>
               </div>
               <div>
                 <div style={{ padding: '0 1rem' }}>
-                  <h1 component="h6" variant="h6">
+                  <h1>
                     {rocket.name}
                   </h1>
-                  <h2
-                    component="p"
+                  <p
                     color="textSecondary"
                   >
                     {rocket.description}
-                  </h2>
+                  </p>
                 </div>
                 <div>
                   <Button variant="outline-secondary" color="primary" style={{ margin: '1rem' }}>
@@ -45,11 +47,11 @@ const Rockets = () => {
                   </Button>
                 </div>
               </div>
-            </Card>
+            </div>
           </div>
         ))}
       </div>
-    </Card>
+    </section>
   );
 };
 
