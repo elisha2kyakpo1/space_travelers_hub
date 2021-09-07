@@ -6,7 +6,6 @@ export const getMissions = async () => {
     },
     mode: 'cors',
   }).then((res) => res.json());
-  console.log(response);
 
   return response;
 };

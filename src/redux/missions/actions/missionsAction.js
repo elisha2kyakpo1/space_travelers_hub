@@ -9,7 +9,6 @@ export const fetchMissions = (payLoad) => ({
 
 export const getMissionsApi = () => async (dispatch) => {
   const missions = await MISSIONS_API.getMissions();
-  console.log(missions);
   if (missions) {
     dispatch(fetchMissions(missions));
   }

@@ -10,13 +10,10 @@ export const Missions = () => {
 
   useEffect(() => {
     dispatch(getMissionsApi());
-    console.log(missionsLists);
   }, []);
 
   const handleMemberStatus = (id) => (e) => {
     e.preventDefault();
-    console.log(id);
-    console.log(e.target.id);
     if (e.target.id === id) {
       if (e.target.value === 'Join Mission') {
         e.target.value = 'Leave Mission';
