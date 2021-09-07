@@ -1,0 +1,39 @@
+.nav-links {
+  margin-left: 10px;
+  list-style: none;
+}
+
+.header nav {
+  margin-left: auto;
+}
+
+.header {
+  margin: 0 6rem;
+  border-bottom: 2px solid lightgray;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.nav-link {
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #07f;
+}
+
+.logo span {
+  font-size: 1.8rem;
+  margin-left: 10px;
+}
+
+.logo,
+.header,
+.nav-links-cont {
+  display: flex;
+  align-items: center;
+}
+
+.active {
+  text-decoration: underline;
+}

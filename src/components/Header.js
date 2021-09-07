@@ -1,17 +1,18 @@
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
+import './Header.css';
 
-const Header = ({ routes }) => (
-  <header>
-    <div>
-      <img alt="logo" />
+const Header = ({ routes, logo }) => (
+  <header className="header">
+    <div className="logo">
+      <img src={logo} alt="logo" height="40" width="40" />
       <span>Space Travelers&apos; Hub</span>
     </div>
     <nav>
-      <ul className="nav-links">
-        {routes.map(({ name, url }) => (
-          <li key={url} className="nav-link">
-            <NavLink className="nav-link" activeClassName="active" exact to={url}>{name}</NavLink>
+      <ul className="nav-links-cont">
+        {routes.map(({ name, path }) => (
+          <li key={path} className="nav-links">
+            <NavLink className="nav-link" activeClassName="active" exact to={path}>{name}</NavLink>
           </li>
         ))}
       </ul>
@@ -20,6 +21,7 @@ const Header = ({ routes }) => (
 );
 
 Header.propTypes = {
+  logo: PropTypes.string.isRequired,
   routes: PropTypes.arrayOf(PropTypes.shape({
     path: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
