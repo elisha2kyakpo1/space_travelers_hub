@@ -1,11 +1,12 @@
-const getMissions = async () => {
-  const response = await fetch('', {
+export const getMissions = async () => {
+  const response = await fetch('https://api.spacexdata.com/v3/missions', {
     method: 'GET',
     headers: {
       'content-type': 'application/json',
     },
     mode: 'cors',
   }).then((res) => res.json());
+  console.log(response);
 
   return response;
 };

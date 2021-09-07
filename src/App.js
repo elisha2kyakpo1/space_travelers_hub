@@ -1,5 +1,5 @@
 import './App.css';
-import { Missions } from './components/missions/missions';
+import { Missions } from './components/missions/Missions';
 
 function App() {
   return (
