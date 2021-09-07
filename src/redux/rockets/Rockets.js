@@ -1,8 +1,20 @@
 const GET_ROCKET = 'space_travelers_hub/rockets/ADD_ROCKET';
+const RESERVE_ROCKET_TICKET = 'space_travelers_hub/rockets/ADD_ROCKET';
+const CANCEL_ROCKET_TICKET = 'space_travelers_hub/rockets/ADD_ROCKET';
 
 const LoadRockets = (payload) => ({
   type: GET_ROCKET,
   payload,
+});
+
+const reserveRocketTicket = (id) => ({
+  type: GET_ROCKET,
+  id,
+});
+
+const cancelRocketTicket = (id) => ({
+  type: CANCEL_ROCKET_TICKET,
+  id,
 });
 
 const rocketReducer = (state = [], action) => {
@@ -19,6 +31,16 @@ const rocketReducer = (state = [], action) => {
           id, name, flickrImages, description,
         };
       });
+    case RESERVE_ROCKET_TICKET:
+      return state.map((rocket) => {
+        if (rocket.id !== action.id) return rocket;
+        return { ...rocket, reserved: true };
+      });
+    case CANCEL_ROCKET_TICKET:
+      return state.map((rocket) => {
+        if (rocket.id !== action.id) return rocket;
+        return { ...rocket, reserved: false };
+      });
     default:
       return state;
   }
@@ -32,6 +54,8 @@ const getRocketData = () => (dispatch) => {
 
 export {
   LoadRockets,
+  reserveRocketTicket,
   rocketReducer,
   getRocketData,
+  cancelRocketTicket,
 };

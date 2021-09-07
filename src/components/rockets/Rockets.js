@@ -2,10 +2,10 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   Button,
-  Card,
+  // Card,
 } from 'react-bootstrap';
 import './rockets.css';
-import { getRocketData } from '../../redux/rockets/Rockets';
+import { cancelRocketTicket, getRocketData, reserveRocketTicket } from '../../redux/rockets/Rockets';
 
 const Rockets = () => {
   const rockets = useSelector((state) => state.rocketReducer);
@@ -16,6 +16,14 @@ const Rockets = () => {
     }
   }, []);
 
+  const handleClick = (id, reserved) => {
+    if (!reserved) {
+      dispatch(reserveRocketTicket(id));
+    } else {
+      dispatch(cancelRocketTicket(id));
+    }
+  };
+
   return (
     <section>
       <div className="cont-rockets">
@@ -23,12 +31,9 @@ const Rockets = () => {
           <div key={rocket.id}>
             <div className="img-desc">
               <div>
-                <Card>
-                  image=
-                  {rocket.flickrImages[0]}
-                  title=
-                  {rocket.name}
-                </Card>
+                <div className="img-div">
+                  <img src={rocket.flickrImages[0]} alt="img" />
+                </div>
               </div>
               <div>
                 <div style={{ padding: '0 1rem' }}>
@@ -42,7 +47,7 @@ const Rockets = () => {
                   </p>
                 </div>
                 <div>
-                  <Button variant="outline-secondary" color="primary" style={{ margin: '1rem' }}>
+                  <Button onClick={() => handleClick(rocket.id, rocket.reserved)} variant="outline-secondary" color="primary" style={{ margin: '1rem' }}>
                     Reserve a ticket
                   </Button>
                 </div>

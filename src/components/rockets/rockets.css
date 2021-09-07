@@ -3,6 +3,14 @@
   align-items: center;
 }
 
+.img-div img {
+  width: 250px;
+}
+
+.img-div {
+  margin-top: 20px;
+}
+
 .cont-rockets {
   margin: 0 6rem;
 }
