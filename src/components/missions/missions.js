@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { getMissionsApi } from '../../redux/missions/actions/missionsAction';
+import './mission.css';
 
 export const Missions = () => {
   const missionsLists = useSelector((state) => state.missions);
