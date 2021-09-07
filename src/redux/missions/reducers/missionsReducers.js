@@ -11,6 +11,8 @@ const missionsReducer = (state = initialState, action) => {
 
       return loadedBooks;
     }
+    case 'SELECTED_MISSIONS':
+      return [...state, payLoad.selectedMisisons]
     default:
       return state;
   }
