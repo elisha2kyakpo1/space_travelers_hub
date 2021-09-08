@@ -1,0 +1,9 @@
+.my-profile {
+  display: flex;
+  align-items: center;
+  margin: 0 6rem;
+}
+
+.mission-booked {
+  margin-right: 500px;
+}
