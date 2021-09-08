@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   Button,
-  // Card,
 } from 'react-bootstrap';
 import './rockets.css';
 import { cancelRocketTicket, getRocketData, reserveRocketTicket } from '../../redux/rockets/Rockets';
@@ -17,43 +16,45 @@ const Rockets = () => {
     }
   }, []);
 
-  const handleClick = (id, reserved) => {
-    if (!reserved) {
-      dispatch(reserveRocketTicket(id));
-    } else {
-      dispatch(cancelRocketTicket(id));
-    }
-  };
-
-  const reserved = (reserved) => (reserved ? <span className="reserve-btn">Reserved</span> : null);
+  const handleTicketBooking = (id) => dispatch(reserveRocketTicket(id));
+  const handleTicketCancellation = (id) => dispatch(cancelRocketTicket(id));
 
   return (
     <section>
       <div className="cont-rockets">
-        {rockets.map((rocket) => (
-          <div key={rocket.id}>
+        {rockets.map(({
+          id, name, description, flickrImages, reserved,
+        }) => (
+          <div key={id}>
             <div className="img-desc">
               <div>
                 <div className="img-div">
-                  <img src={rocket.flickrImages[0]} alt="img" />
+                  <img src={flickrImages[0]} alt="img" />
                 </div>
               </div>
-              <div>
-                <div style={{ padding: '0 1rem' }}>
+              <div style={{ padding: '0 1rem' }}>
+                <div>
                   <h4>
-                    {rocket.name}
+                    {name}
                   </h4>
                   <p
                     color="textSecondary"
                   >
-                    {reserved(rocket.reserved)}
-                    {rocket.description}
+                    {reserved && <span bg="info">Reserved</span>}
+                    {description}
                   </p>
                 </div>
                 <div>
-                  <Button onClick={() => handleClick(rocket.id, rocket.reserved)} variant="primary" color="primary" style={{ margin: '1rem' }}>
-                    Reserve a ticket
-                  </Button>
+                  {!reserved && (
+                    <Button variant="primary" onClick={() => handleTicketBooking(id)}>
+                      Reserve rocket
+                    </Button>
+                  )}
+                  {reserved && (
+                    <Button variant="outline-secondary" onClick={() => handleTicketCancellation(id)}>
+                      Cancel reservation
+                    </Button>
+                  )}
                 </div>
               </div>
             </div>

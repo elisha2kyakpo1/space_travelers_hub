@@ -10,13 +10,7 @@ const MyProfile = () => {
         <h3>My Missions</h3>
         <ul className="list">
           {!mission.length ? <li className="list-item">NO MISSIONS JOINED YET</li> : mission.map(({ id, name }) => (
-            <li key={id} className="list-item">
-              <span>
-                {name}
-                <br />
-                <a href target="blank">Read more</a>
-              </span>
-            </li>
+            <li key={id} className="mission-name">{name}</li>
           ))}
         </ul>
       </div>
@@ -24,14 +18,7 @@ const MyProfile = () => {
         <h3>My Rockets</h3>
         <ul className="list">
           {!myRockets.length ? <li className="list-item">NO ROCKET BOOKED YET</li> : myRockets.map(({ id, name }) => (
-            <li key={id} className="list-item">
-              <span>
-                {name}
-                <br />
-                <a href target="blank">Read more</a>
-              </span>
-
-            </li>
+            <li key={id} className="rocket-name">{name}</li>
           ))}
         </ul>
       </div>
