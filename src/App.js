@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './components/Header';
-import { Missions } from './components/missions/Missions';
 import MyProfile from './components/MyProfile';
 import logo from './assets/planet.svg';
 import Rockets from './components/rockets/Rockets';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Missions } from './components/missions/Missions';
 
 const routes = [
   {
