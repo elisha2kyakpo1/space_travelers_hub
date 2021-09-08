@@ -32,7 +32,7 @@ export const Missions = () => {
   return (
 
     <div className="missions">
-      <div className="list-items header">
+      <div className="list-items">
         <div className="miss-name">Mission Name</div>
         <div className="miss-desc">Description</div>
         <div className="status-h"> Status</div>
