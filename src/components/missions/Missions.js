@@ -1,18 +1,19 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { getMissionsApi } from '../../redux/missions/actions/missionsAction';
+import { getMissionsApi, selectedMissions } from '../../redux/missions/actions/missionsAction';
 import './mission.css';
 
 export const Missions = () => {
   const missionsLists = useSelector((state) => state.missions);
+  let selectedMissionsItems = [];
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getMissionsApi());
   }, []);
 
-  const handleMemberStatus = (id) => (e) => {
+  const handleMemberStatus = (id, name) => (e) => {
     e.preventDefault();
     if (e.target.id === id) {
       if (e.target.value === 'Join Mission') {
@@ -20,11 +21,17 @@ export const Missions = () => {
         document.getElementById(`status-${id}`).innerHTML = 'Active Memebr';
         document.getElementById(`status-${id}`).className = 'active';
         document.getElementById(id).className = 'btn-member';
+        selectedMissionsItems.push(name);
+        dispatch(selectedMissionsItems);
+        console.log(selectedMissions(selectedMissionsItems));
       } else {
         e.target.value = 'Join Mission';
         document.getElementById(`status-${id}`).innerHTML = 'NOT A MEMBER';
         document.getElementById(`status-${id}`).className = 'not-active';
         document.getElementById(id).className = 'btn-notmember';
+        selectedMissionsItems = selectedMissionsItems.filter((item) => item !== name);
+        dispatch(selectedMissions(selectedMissionsItems));
+        console.log(selectedMissionsItems);
       }
     }
     return true;
@@ -50,7 +57,7 @@ export const Missions = () => {
               {' '}
             </div>
             <div className="btnjoin">
-              <input type="button" value="Join Mission" className="btn-notmember" onClick={handleMemberStatus(id)} id={id} />
+              <input type="button" value="Join Mission" className="btn-notmember" onClick={handleMemberStatus(id, item.mission_name)} id={id} />
             </div>
           </div>
         );
