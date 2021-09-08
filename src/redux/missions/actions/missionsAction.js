@@ -8,12 +8,12 @@ export const fetchMissions = (payLoad) => ({
   type: FETCH_API,
   payLoad,
 });
-const reserveMission = (id) => ({
+export const reserveMission = (id) => ({
   type: RESERVE_MISSION,
   id,
 });
 
-const cancelMission = (id) => ({
+export const cancelMission = (id) => ({
   type: CANCEL_MISSION,
   id,
 });

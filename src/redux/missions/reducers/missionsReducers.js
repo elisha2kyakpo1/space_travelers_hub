@@ -20,9 +20,11 @@ const missionsReducer = (state = initialState, action) => {
       });
       // return [...state, loadedMissions];
     }
-    case 'SELECTED_MISSIONS': {
-      console.log(action.payLoad);
-      return [{ ...state, missions: action.payLoad }];
+    case 'RESERVE_MISSION': {
+      return state.map((mission) => {
+        if (mission.id !== action.id) return mission;
+        return { ...mission, reserved: true };
+      });
     }
 
     default:
