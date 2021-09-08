@@ -1,6 +1,7 @@
-const GET_ROCKET = 'space_travelers_hub/rockets/ADD_ROCKET';
-const RESERVE_ROCKET_TICKET = 'space_travelers_hub/rockets/ADD_ROCKET';
-const CANCEL_ROCKET_TICKET = 'space_travelers_hub/rockets/ADD_ROCKET';
+const GET_ROCKET = 'space_travelers_hub/rockets/GET_ROCKET';
+const RESERVE_ROCKET_TICKET = 'space_travelers_hub/rockets/RESERVE_ROCKET_TICKET';
+const CANCEL_ROCKET_TICKET = 'space_travelers_hub/rockets/CANCEL_ROCKET_TICKET';
+const LEAVE_MISSION = 'space_travelers_hub/rockets/LEAVE_MISSION';
 
 const LoadRockets = (payload) => ({
   type: GET_ROCKET,
@@ -14,6 +15,11 @@ const reserveRocketTicket = (id) => ({
 
 const cancelRocketTicket = (id) => ({
   type: CANCEL_ROCKET_TICKET,
+  id,
+});
+
+const leaveMission = (id) => ({
+  type: LEAVE_MISSION,
   id,
 });
 
@@ -58,4 +64,5 @@ export {
   rocketReducer,
   getRocketData,
   cancelRocketTicket,
+  leaveMission,
 };

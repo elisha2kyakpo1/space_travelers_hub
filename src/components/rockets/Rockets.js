@@ -9,6 +9,7 @@ import { cancelRocketTicket, getRocketData, reserveRocketTicket } from '../../re
 
 const Rockets = () => {
   const rockets = useSelector((state) => state.rocketReducer);
+
   const dispatch = useDispatch();
   useEffect(() => {
     if (!rockets.length) {
@@ -24,6 +25,8 @@ const Rockets = () => {
     }
   };
 
+  const reserved = (reserved) => (reserved ? <span className="reserve-btn">Reserved</span> : null);
+
   return (
     <section>
       <div className="cont-rockets">
@@ -37,17 +40,18 @@ const Rockets = () => {
               </div>
               <div>
                 <div style={{ padding: '0 1rem' }}>
-                  <h1>
+                  <h4>
                     {rocket.name}
-                  </h1>
+                  </h4>
                   <p
                     color="textSecondary"
                   >
+                    {reserved(rocket.reserved)}
                     {rocket.description}
                   </p>
                 </div>
                 <div>
-                  <Button onClick={() => handleClick(rocket.id, rocket.reserved)} variant="outline-secondary" color="primary" style={{ margin: '1rem' }}>
+                  <Button onClick={() => handleClick(rocket.id, rocket.reserved)} variant="primary" color="primary" style={{ margin: '1rem' }}>
                     Reserve a ticket
                   </Button>
                 </div>
