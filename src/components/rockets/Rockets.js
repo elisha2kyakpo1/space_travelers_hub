@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   Button,
+  Badge,
 } from 'react-bootstrap';
 import './rockets.css';
 import { cancelRocketTicket, getRocketData, reserveRocketTicket } from '../../redux/rockets/Rockets';
@@ -38,9 +39,10 @@ const Rockets = () => {
                     {name}
                   </h4>
                   <p
+                    className="para"
                     color="textSecondary"
                   >
-                    {reserved && <span bg="info">Reserved</span>}
+                    {reserved && <Badge bg="info">Reserved</Badge>}
                     {description}
                   </p>
                 </div>

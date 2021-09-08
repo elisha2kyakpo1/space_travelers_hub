@@ -4,6 +4,26 @@
   margin: 0 6rem;
 }
 
+.rocket-name,
+.mission-name,
+.list-item {
+  list-style: none;
+  font-size: 1.2rem;
+  margin: 10px 5px;
+}
+
+.list {
+  border: 2px solid lightgray;
+  padding: 10px;
+  padding-right: 20rem;
+  border-radius: 5px;
+}
+
 .mission-booked {
-  margin-right: 500px;
+  margin-right: 50px;
+}
+
+.mission-booked,
+.rocket-booked {
+  margin-top: 15px;
 }
