@@ -3,6 +3,17 @@
   list-style: none;
 }
 
+.nav-link {
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #07f;
+}
+
+.nav-link:nth-child(3) {
+  display: inline-block;
+  border-left: 1px solid black;
+}
+
 .nav-link.active {
   text-decoration: underline;
 }
@@ -18,12 +29,6 @@
 
 .logo {
   cursor: pointer;
-}
-
-.nav-link {
-  font-size: 1.4rem;
-  text-decoration: none;
-  color: #07f;
 }
 
 .logo span {

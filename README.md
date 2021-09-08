@@ -1,70 +1,104 @@
-# Getting Started with Create React App
+[Microverse](https://img.shields.io/badge/Microverse-blueviolet)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Space_travelers-_hub
+Space travelers' hub, it's a  web application for a company that provides commercial and scientific space travel services. The application allows users to book rockets and join selected space missions. The app is built with JavaScript, React and Redux.
 
-## Available Scripts
+- A home page showing a list of rockets that you can "book/cancel."
+- In this project we pratice giving code reviews to our teammates. 
 
-In the project directory, you can run:
+![Project image]()
 
-### `yarn start`
+## Video
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[Coming soon]()
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Project requirements
+- You should build these interfaces:
+  - The **home page(rockets)**.
+  - The **missions page**.
+  - The **profile page**.
 
-### `yarn test`
+## Built With 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- HTML/CSS
+- JavaSCcript
+- Node.JS
+- Bootstrap
+- React
+- Redux
 
-### `yarn build`
+## Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+If you want a copy of this file go to the github repository and download it from the link below.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [`space_travelers_hub`](https://github.com/elisha2kyakpo1/space_travelers_hub.git)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+#### Setup
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```cmd
+git clone https://github.com/elisha2kyakpo1/space_travelers_hub.git 
+cd space_travelers_hub
+```
+### Install
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```cmd
+npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```cmd
+npm run build 
+```
+### Usage
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```cmd
+npm start
+```
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+If you are non a technical person you can download the zip file.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- To do that you have to go to the green button that says 'Code' and then press on it.
+- Choose the option 'Download Zip' and wait until it download.
+- Then you need to decompress it.
+- You will need to have Zip compress file software installed in your computer. If you don't have it you can download it from here
+  [`https://www.7-zip.org/download.html`](https://www.7-zip.org/download.html)
+- Do double click on the Capstone-1.zip and choose a folder where to place all the decompressed files.
+- Once you are done decompressing, you can open the created folder.
+- In it you can double click on the index.html file and choose a browser to open it (For example google Chrome Browser).
+- Now you should be able to see the project.
+- Remember to use the mouse to navigate through the website. Also you can use the keys 'arrow up' and 'arrow down' of your keyboard to scroll up and down.
 
-### Code Splitting
+### Prerequisites
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Node.JS
 
-### Analyzing the Bundle Size
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+👤 **Tedros Tesfay**
 
-### Making a Progressive Web App
+- GitHub: [@tta2yta](https://github.com/tta2yta)
+- Twitter: [Tedros12859799](https://twitter.com/Tedros12859799)
+- LinkedIn: [tedros-tesfay-489422111/](https://www.linkedin.com/in/tedros-tesfay-489422111/)
+  
+👤 **Elisha Kyakopo**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- GitHub: [@elisha2kyakpo1](https://github.com/elisha2kyakpo1)
+- Twitter: [@elisha1k](https://twitter.com/Elisha1k)
+- LinkedIn: [Elisha Kyakopo](https://www.linkedin.com/in/elisha-kyakopo/)
 
-### Advanced Configuration
+## 🤝 Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Contributions, issues, and feature requests are welcome!
 
-### Deployment
+Feel free to check the [issues page](../../issues/).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Show your support
 
-### `yarn build` fails to minify
+Give a ⭐️ if you like this project!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Acknowledgments
+
+- Microverse for giving me this chance
+- The amazing code reviewers for making me improve every day :thumbsup:
+  
