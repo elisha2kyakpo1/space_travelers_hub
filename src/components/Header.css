@@ -23,8 +23,13 @@
 }
 
 .header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
   margin: 0 6rem;
   border-bottom: 2px solid lightgray;
+  background-color: #fafafa;
 }
 
 .logo {
