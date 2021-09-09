@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getMissionsApi, reserveMission } from '../../redux/missions/actions/missionsAction';
+import { getMissionsApi, reserveMission, cancelMission } from '../../redux/missions/actions/missionsAction';
 import './mission.css';
 
 export const Missions = () => {
@@ -14,9 +14,9 @@ export const Missions = () => {
     console.log(missionsLists);
   }, []);
 
-  const handleMemberStatus = (id) => {
-    console.log(id);
-    dispatch(reserveMission(id));
+  const handleMemberStatus = (id) => (e) => {
+    if (e.target.value === 'Join Mission') dispatch(reserveMission(id));
+    else dispatch(cancelMission(id));
   };
   return (
 
@@ -39,7 +39,7 @@ export const Missions = () => {
             {' '}
           </div>
           <div className="btnjoin">
-            <input type="button" value={reserved ? 'Leave Mission' : 'Join Mission'} className={reserved ? 'btn-member' : 'btn-notmember'} onClick={() => handleMemberStatus(missionId)} />
+            <input type="button" value={reserved ? 'Leave Mission' : 'Join Mission'} className={reserved ? 'btn-member' : 'btn-notmember'} onClick={handleMemberStatus(missionId)} />
           </div>
         </div>
       ))}
