@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getMissionsApi } from '../../redux/missions/actions/MissionsAction';
-import { reserveMission, cancelMission } from '../../redux/missions/actions/missionsAction';
+import { cancelMission, getMissionsApi, reserveMission } from '../../redux/missions/actions/MissionsAction';
 import './mission.css';
 
 export const Missions = () => {
@@ -9,38 +8,16 @@ export const Missions = () => {
   console.log(missionsLists);
   // let selectedMissionsItems = [];
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(getMissionsApi());
-  }, []);
-
-  const handleMemberStatus = (id) => (e) => {
-    e.preventDefault();
-    if (e.target.id === id) {
-      if (e.target.value === 'Join Mission') {
-        e.target.value = 'Leave Mission';
-        document.getElementById(`status-${id}`).innerHTML = 'Active Memebr';
-        document.getElementById(`status-${id}`).className = 'active';
-        document.getElementById(id).className = 'btn-member';
-      } else {
-        e.target.value = 'Join Mission';
-        document.getElementById(`status-${id}`).innerHTML = 'NOT A MEMBER';
-        document.getElementById(`status-${id}`).className = 'not-active';
-        document.getElementById(id).className = 'btn-notmember';
-      }
-    }
-    return true;
     console.log(missionsLists);
-  };
-
+  }, []);
   const handleMemberStatus = (id) => (e) => {
     if (e.target.value === 'Join Mission') dispatch(reserveMission(id));
     else dispatch(cancelMission(id));
   };
   return (
-
     <div className="missions">
-      <div className="list-header">
       <div className="list-items header-mission">
         <div className="miss-name">Mission Name</div>
         <div className="miss-desc">Description</div>
@@ -66,10 +43,7 @@ export const Missions = () => {
           </div>
         </div>
       ))}
-
-    </div>
     </div>
   );
 };
-
 export default Missions;

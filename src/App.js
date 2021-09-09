@@ -6,7 +6,7 @@ import logo from './assets/planet.svg';
 import Rockets from './components/rockets/Rockets';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import store from './redux/ConfigureStore';
-import Missions from './components/missions/Missions';
+import { Missions } from './components/missions/Missions';
 
 const routes = [
   {
