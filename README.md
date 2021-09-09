@@ -6,7 +6,7 @@ Space travelers' hub, it's a  web application for a company that provides commer
 - A home page showing a list of rockets that you can "book/cancel."
 - In this project we pratice giving code reviews to our teammates. 
 
-![Project image]()
+![Project image](/src/assets/space-travelers.png)
 
 ## Video
 
