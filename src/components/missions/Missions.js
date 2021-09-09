@@ -35,7 +35,10 @@ export const Missions = () => {
           <div className="miss-desc">{description}</div>
           <div className="status">
             {' '}
-            <span id={`status-${missionId}`} className="not-active">NOT A MEMBER </span>
+            <span id={`status-${missionId}`} className={reserved ? 'active' : 'not-active'}>
+              { reserved ? 'Active Member' : 'NOT A MEMBER'}
+              {' '}
+            </span>
             {' '}
           </div>
           <div className="btnjoin">
