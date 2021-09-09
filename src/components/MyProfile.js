@@ -9,8 +9,8 @@ const MyProfile = () => {
       <div className="mission-booked">
         <h3>My Missions</h3>
         <ul className="list">
-          {!mission.length ? <li className="list-item">NO MISSIONS JOINED YET</li> : mission.map(({ id, name }) => (
-            <li key={id} className="mission-name">{name}</li>
+          {!mission.length ? <li className="list-item">NO MISSIONS JOINED YET</li> : mission.map(({ missionId, missionName }) => (
+            <li key={missionId} className="mission-name">{missionName}</li>
           ))}
         </ul>
       </div>
