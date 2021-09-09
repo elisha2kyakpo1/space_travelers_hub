@@ -8,9 +8,9 @@ Space travelers' hub, it's a  web application for a company that provides commer
 
 ![Project image](/src/assets/space-travelers.png)
 
-## Video
+## Project video overview
 
-[Coming soon]()
+[Demo video](https://drive.google.com/file/d/1dF_0-L7zaufNrDijXK7WqDxVED_O6Mde/view?usp=sharing)
 
 ### Project requirements
 - You should build these interfaces:
