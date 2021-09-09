@@ -5,12 +5,12 @@ import './mission.css';
 
 export const Missions = () => {
   const missionsLists = useSelector((state) => state.missions);
-  console.log(missionsLists);
-  // let selectedMissionsItems = [];
+
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getMissionsApi());
-    console.log(missionsLists);
+    if (!missionsLists.length) {
+      dispatch(getMissionsApi());
+    }
   }, []);
   const handleMemberStatus = (id) => (e) => {
     if (e.target.value === 'Join Mission') dispatch(reserveMission(id));
