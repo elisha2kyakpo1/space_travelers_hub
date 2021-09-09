@@ -6,7 +6,6 @@ import logo from './assets/planet.svg';
 import Rockets from './components/rockets/Rockets';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
 const routes = [
   {
     path: '/',
