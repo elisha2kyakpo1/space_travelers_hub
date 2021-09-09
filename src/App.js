@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import Header from './components/Header';
+import MyProfile from './components/MyProfile';
+import logo from './assets/planet.svg';
+import Rockets from './components/rockets/Rockets';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import store from './redux/ConfigureStore';
+import { Missions } from './components/missions/Missions';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const routes = [
+  {
+    path: '/',
+    name: 'Rockets',
+    component: <Rockets />,
+  },
+  {
+    path: '/missions',
+    name: 'Missions',
+    component: <Missions />,
+  },
+  {
+    path: '/my-profile',
+    name: 'My Profile',
+    component: <MyProfile />,
+  },
+];
+
+const App = () => (
+  <Provider store={store}>
+    <Router>
+      <Header routes={routes} logo={logo} />
+      <Switch>
+        {routes.map(({ path, component }) => (
+          <Route path={path} exact key={path}>{component}</Route>
+        ))}
+      </Switch>
+    </Router>
+  </Provider>
+);
 
 export default App;
