@@ -27,7 +27,9 @@ export const Missions = () => {
         <div className="status-h"> Status</div>
         <div className="btnjoin" />
       </div>
-      {missionsLists.map(({ missionId, missionName, description }) => (
+      {missionsLists.map(({
+        missionId, missionName, description, reserved,
+      }) => (
         <div key={missionId} className="list-items">
           <div className="miss-name">{missionName}</div>
           <div className="miss-desc">{description}</div>
@@ -37,7 +39,7 @@ export const Missions = () => {
             {' '}
           </div>
           <div className="btnjoin">
-            <input type="button" value="Join Mission" className="btn-notmember" onClick={() => handleMemberStatus(missionId)} />
+            <input type="button" value={reserved ? 'Leave Mission' : 'Join Mission'} className={reserved ? 'btn-member' : 'btn-notmember'} onClick={() => handleMemberStatus(missionId)} />
           </div>
         </div>
       ))}
