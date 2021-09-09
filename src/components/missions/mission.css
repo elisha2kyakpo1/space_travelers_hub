@@ -1,48 +1,56 @@
-.missions{
-    width: 70%;
-    margin: auto;
-    margin-top: 100px;
-}
-.list-items{
-    display: grid;
-    grid-template-columns: 1fr 3fr 1fr 1fr;
+.missions {
+  margin: 0 6rem;
+  margin-top: 100px;
 }
 
-.list-items div {
-    border: 1px solid black;
-}
-.list-items:nth-child(even) {background: #F2F2F2}
-.miss-name{
-    font-weight: 700;
-    padding: 3px;
-}
-.list-items.header {
-    font-weight: 700;
-    text-align: left;
-}
-.active{
-    background-color:#5DBCCC;
-    border-radius: 5px;
-    padding: 2px 8px;
+.list-items,
+.list-header {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr 1fr;
 }
 
-.not-active{
-    background-color:#BFC3C6;
-    border-radius: 5px;
-    padding: 2px 8px;
+.list-header div {
+  padding-left: 5px;
 }
-.btnjoin, .status{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+.list-items div,
+.list-header div {
+  border: 1px solid black;
 }
-.btn-notmember{
-    border: 1px solid #5DBCCC;
-    padding: 8px;
-    border-radius: 3px;
+
+.list-items:nth-child(even) {
+  background: #f2f2f2;
 }
-.btn-member{
-    border: 1px solid red;
-    padding: 8px;
-    border-radius: 3px;
+
+.list-items .miss-desc {
+  padding: 10px;
+}
+
+.miss-name {
+  font-weight: 700;
+  padding: 3px;
+}
+
+.list-header {
+  font-weight: 700;
+  text-align: left;
+}
+
+.btnjoin,
+.status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-notmember {
+  border: 1px solid #5dbccc;
+  padding: 8px;
+  border-radius: 3px;
+}
+
+.btn-member {
+  border: 1px solid red;
+  padding: 8px;
+  border-radius: 3px;
 }
