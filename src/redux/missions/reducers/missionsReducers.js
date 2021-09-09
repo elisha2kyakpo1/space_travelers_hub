@@ -27,6 +27,13 @@ const missionsReducer = (state = initialState, action) => {
         return { ...mission, reserved: true };
       });
     }
+    case 'CANCEL_MISSION': {
+      console.log(state);
+      return state.map((mission) => {
+        if (mission.missionId !== action.id) return mission;
+        return { ...mission, reserved: false };
+      });
+    }
 
     default:
       return state;
