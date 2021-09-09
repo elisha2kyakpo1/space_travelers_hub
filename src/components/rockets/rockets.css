@@ -7,10 +7,18 @@
   width: 250px;
 }
 
+.para {
+  font-size: 1.2rem;
+}
+
+.badge {
+  margin-right: 10px;
+}
+
 .img-div {
   margin-top: 20px;
 }
 
 .cont-rockets {
-  margin: 0 6rem;
+  margin: 100px 6rem;
 }

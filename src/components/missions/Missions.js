@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getMissionsApi, reserveMission, cancelMission } from '../../redux/missions/actions/missionsAction';
+import { cancelMission, getMissionsApi, reserveMission } from '../../redux/missions/actions/MissionsAction';
 import './mission.css';
 
 export const Missions = () => {
@@ -8,18 +8,15 @@ export const Missions = () => {
   console.log(missionsLists);
   // let selectedMissionsItems = [];
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(getMissionsApi());
     console.log(missionsLists);
   }, []);
-
   const handleMemberStatus = (id) => (e) => {
     if (e.target.value === 'Join Mission') dispatch(reserveMission(id));
     else dispatch(cancelMission(id));
   };
   return (
-
     <div className="missions">
       <div className="list-items header-mission">
         <div className="miss-name">Mission Name</div>
@@ -46,9 +43,7 @@ export const Missions = () => {
           </div>
         </div>
       ))}
-
     </div>
   );
 };
-
 export default Missions;

@@ -1,4 +1,4 @@
-import * as MISSIONS_API from '../api/missionsApi';
+import * as MISSIONS_API from '../api/MissionsApi';
 
 const FETCH_API = 'FETCH_API';
 const RESERVE_MISSION = 'RESERVE_MISSION';

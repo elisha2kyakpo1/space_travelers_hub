@@ -1,7 +1,6 @@
 const GET_ROCKET = 'space_travelers_hub/rockets/GET_ROCKET';
 const RESERVE_ROCKET_TICKET = 'space_travelers_hub/rockets/RESERVE_ROCKET_TICKET';
 const CANCEL_ROCKET_TICKET = 'space_travelers_hub/rockets/CANCEL_ROCKET_TICKET';
-const LEAVE_MISSION = 'space_travelers_hub/rockets/LEAVE_MISSION';
 
 const LoadRockets = (payload) => ({
   type: GET_ROCKET,
@@ -9,17 +8,12 @@ const LoadRockets = (payload) => ({
 });
 
 const reserveRocketTicket = (id) => ({
-  type: GET_ROCKET,
+  type: RESERVE_ROCKET_TICKET,
   id,
 });
 
 const cancelRocketTicket = (id) => ({
   type: CANCEL_ROCKET_TICKET,
-  id,
-});
-
-const leaveMission = (id) => ({
-  type: LEAVE_MISSION,
   id,
 });
 
@@ -39,13 +33,25 @@ const rocketReducer = (state = [], action) => {
       });
     case RESERVE_ROCKET_TICKET:
       return state.map((rocket) => {
-        if (rocket.id !== action.id) return rocket;
-        return { ...rocket, reserved: true };
+        if (rocket.id !== action.id) {
+          return rocket;
+        }
+
+        return {
+          ...rocket,
+          reserved: true,
+        };
       });
     case CANCEL_ROCKET_TICKET:
       return state.map((rocket) => {
-        if (rocket.id !== action.id) return rocket;
-        return { ...rocket, reserved: false };
+        if (rocket.id !== action.id) {
+          return rocket;
+        }
+
+        return {
+          ...rocket,
+          reserved: false,
+        };
       });
     default:
       return state;
@@ -64,5 +70,4 @@ export {
   rocketReducer,
   getRocketData,
   cancelRocketTicket,
-  leaveMission,
 };
