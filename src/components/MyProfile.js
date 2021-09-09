@@ -3,14 +3,14 @@ import './MyProfile.css';
 
 const MyProfile = () => {
   const myRockets = useSelector((state) => state.rocketReducer.filter((rocket) => rocket.reserved));
-  const mission = useSelector((state) => state.rocketReducer.filter((mission) => mission.reserved));
+  const mission = useSelector((state) => state.missions.filter((mission) => mission.reserved));
   return (
     <div className="my-profile">
       <div className="mission-booked">
         <h3>My Missions</h3>
         <ul className="list">
-          {!mission.length ? <li className="list-item">NO MISSIONS JOINED YET</li> : mission.map(({ id, name }) => (
-            <li key={id} className="mission-name">{name}</li>
+          {!mission.length ? <li className="list-item">NO MISSIONS JOINED YET</li> : mission.map(({ missionId, missionName }) => (
+            <li key={missionId} className="mission-name">{missionName}</li>
           ))}
         </ul>
       </div>
