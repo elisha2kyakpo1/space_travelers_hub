@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getMissionsApi } from '../../redux/missions/actions/missionsAction';
+import { getMissionsApi, reserveMission } from '../../redux/missions/actions/missionsAction';
 import './mission.css';
 
 export const Missions = () => {
@@ -14,10 +14,9 @@ export const Missions = () => {
     console.log(missionsLists);
   }, []);
 
-  const handleMemberStatus = (id, name) => (e) => {
-    e.preventDefault();
+  const handleMemberStatus = (id) => {
     console.log(id);
-    console.log(name);
+    dispatch(reserveMission(id));
   };
   return (
 
@@ -28,17 +27,17 @@ export const Missions = () => {
         <div className="status-h"> Status</div>
         <div className="btnjoin" />
       </div>
-      {missionsLists.map((item) => (
-        <div key={item.mission_id} className="list-items">
-          <div className="miss-name">{item.mission_name}</div>
-          <div className="miss-desc">{item.description}</div>
+      {missionsLists.map(({ missionId, missionName, description }) => (
+        <div key={missionId} className="list-items">
+          <div className="miss-name">{missionName}</div>
+          <div className="miss-desc">{description}</div>
           <div className="status">
             {' '}
-            <span id={item.mission_id} className="not-active">NOT A MEMBER </span>
+            <span id={`status-${missionId}`} className="not-active">NOT A MEMBER </span>
             {' '}
           </div>
           <div className="btnjoin">
-            <input type="button" value="Join Mission" className="btn-notmember" onClick={handleMemberStatus(item.mission_id, item.mission_name)} />
+            <input type="button" value="Join Mission" className="btn-notmember" onClick={() => handleMemberStatus(missionId)} />
           </div>
         </div>
       ))}

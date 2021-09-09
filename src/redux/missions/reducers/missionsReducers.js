@@ -21,8 +21,9 @@ const missionsReducer = (state = initialState, action) => {
       // return [...state, loadedMissions];
     }
     case 'RESERVE_MISSION': {
+      console.log(state);
       return state.map((mission) => {
-        if (mission.id !== action.id) return mission;
+        if (mission.missionId !== action.id) return mission;
         return { ...mission, reserved: true };
       });
     }
