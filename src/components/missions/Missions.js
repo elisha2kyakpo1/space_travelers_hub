@@ -32,7 +32,7 @@ export const Missions = () => {
           <div className="miss-desc">{description}</div>
           <div className="status" aria-hidden="true">
             {' '}
-            <span id={`status-${missionId}`} className={reserved ? 'active' : 'not-active'}>
+            <span id={`status-${missionId}`} className={reserved ? 'active-status' : 'not-active'}>
               { reserved ? 'Active Member' : 'NOT A MEMBER'}
               {' '}
             </span>

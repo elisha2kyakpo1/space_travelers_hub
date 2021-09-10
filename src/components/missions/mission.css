@@ -54,3 +54,9 @@
   padding: 8px;
   border-radius: 3px;
 }
+
+.active-status {
+  background-color: #2aa8bd;
+  padding: 3px;
+  border-radius: 4px 6px;
+}
