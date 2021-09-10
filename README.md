@@ -10,7 +10,7 @@ Space travelers' hub, it's a  web application for a company that provides commer
 
 ## Project video overview
 
-[Demo video](https://drive.google.com/file/d/1dF_0-L7zaufNrDijXK7WqDxVED_O6Mde/view?usp=sharing)
+[Demo video](https://drive.google.com/file/d/1hPQw7bp964wQXjdAtfk9Thj68O83HQ0i/view?usp=sharing)
 
 ### Project requirements
 - You should build these interfaces:
