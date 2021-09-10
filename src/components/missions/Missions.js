@@ -30,7 +30,7 @@ export const Missions = () => {
         <div key={missionId} className="list-items">
           <div className="miss-name">{missionName}</div>
           <div className="miss-desc">{description}</div>
-          <div className="status">
+          <div className="status" aria-hidden="true">
             {' '}
             <span id={`status-${missionId}`} className={reserved ? 'active' : 'not-active'}>
               { reserved ? 'Active Member' : 'NOT A MEMBER'}
@@ -38,7 +38,7 @@ export const Missions = () => {
             </span>
             {' '}
           </div>
-          <div className="btnjoin">
+          <div className="btnjoin" role="dialog">
             <input type="button" value={reserved ? 'Leave Mission' : 'Join Mission'} className={reserved ? 'btn-member' : 'btn-notmember'} onClick={handleMemberStatus(missionId)} />
           </div>
         </div>

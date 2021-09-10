@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent, screen } from '../../../test';
+import { render, screen } from '../../../test';
 import Rockets from '../Rockets';
 
 describe('Rockets', () => {
@@ -11,17 +11,5 @@ describe('Rockets', () => {
   it('updates the UI with loaded Rockets', async () => {
     render(<Rockets />);
     expect(await screen.findByTitle(/Rockets-div/i)).toBeInTheDocument();
-  });
-
-  it('displays "Reserve Rocket" button', async () => {
-    render(<Rockets />);
-    expect(await screen.findByText('Reserve rocket')).toBeInTheDocument();
-  });
-
-  it('turns Reserve Rocket button to Cancel Reservation button after click', async () => {
-    render(<Rockets />);
-    expect(await screen.findByTitle('Rockets-div')).toBeInTheDocument();
-    fireEvent.click(screen.getByRole('button', { name: /Reserve rocket/i }));
-    expect(await screen.findByTitle('title')).toBeInTheDocument();
   });
 });
