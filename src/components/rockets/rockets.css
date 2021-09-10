@@ -1,0 +1,24 @@
+.img-desc {
+  display: flex;
+  align-items: center;
+}
+
+.img-div img {
+  width: 250px;
+}
+
+.para {
+  font-size: 1.2rem;
+}
+
+.badge {
+  margin-right: 10px;
+}
+
+.img-div {
+  margin-top: 20px;
+}
+
+.cont-rockets {
+  margin: 100px 6rem;
+}
