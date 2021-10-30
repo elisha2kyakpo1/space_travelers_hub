@@ -1,7 +1,7 @@
 [Microverse](https://img.shields.io/badge/Microverse-blueviolet)
 
 # Space_travelers-_hub
-Space travelers' hub, it's a  web application for a company that provides commercial and scientific space travel services. The application allows users to book rockets and join selected space missions. The app is built with JavaScript, React and Redux.
+Space travelers' hub, it's a  web application for a company that provides commercial and scientific space travel services. The application allows users to book rockets and join selected space missions. The app is built with JavaScript, HTML/CSS, React and Redux.
 
 - A home page showing a list of rockets that you can "book/cancel."
 - In this project we pratice giving code reviews to our teammates. 
